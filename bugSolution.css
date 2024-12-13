@@ -1,0 +1,37 @@
+/* Correct usage of calc() */
+
+.container {
+  width: calc(100% - 20px);
+}
+
+.element {
+  width: calc(50% - 10px);
+  height: calc(100% - 20px);
+}
+
+/* Correct unit handling within calc() */
+
+.element2 {
+  width: calc(50% - 10px);
+  height: calc((100vh - 20px) / 2); 
+}
+
+/* Avoid deeply nested calc() where possible */
+
+.element3 {
+  width: 50%;
+  margin-left: 10px;
+  /* instead of deeply nested calc */
+}
+
+/* use variables to improve readability for complex calculations */
+
+:root {
+  --element-width: calc(50% - 10px);
+  --element-height: calc(100vh - 40px);
+}
+
+.element4 {
+  width: var(--element-width);
+  height: var(--element-height);
+}
